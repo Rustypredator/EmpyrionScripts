@@ -27,6 +27,7 @@
     - ContainerName ist der Name des Containers
     - ItemIds ist eine Kommagetrennte Liste an IDs die in den Container einsortiert werden sollen.
     - Lists ist der Name der Liste, die zusätzlich in den Container sortiert werden soll.
+        - Die Namen der Listen finden sich [hier](https://github.com/GitHub-TC/EmpyrionScripting#vordefinierte-id-listen) (Readme des Empyrion Scripting Mod)
     - Die ItemIds haben Vorrang vor den Listen, soll also etwas aus einer Liste in einen anderen Container einsortiert werden, kann die ID auch einfach in der ItemId Liste eingetragen werden.
 - Bei Item-Listen über 2000 Zeichen muss das JSON komprimiert werden, damit es auf den LCD passt. hierfür gibt es tools wie z.B: https://jsonformatter.org/json-minify
 	- Beispiel der Fehlermeldung bei einem zu langen Datenbankeintrag:
