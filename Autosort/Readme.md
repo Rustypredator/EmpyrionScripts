@@ -1,12 +1,12 @@
 ### Bilder + Anleitung:
-![](Screenshots/Pasted image 20231208154542.png)
+![](Screenshots/img1.png)
 - Es werden auf der Ausgabe alle Items im Input Container angezeigt, die noch nicht zugeordnet sind.
 - IDs müssen dann in dem [[#DB LCD]] dem gewünschten Container zugeordnet werden.
 - Wenn ein Item zugeordnet ist, folgt eine entsprechende Ausgabe unter dem zweiten Trennstrich:
 	- Grün: Erfolgreich verschoben (Diese Anzeige verschwindet nach ein paar Sekunden.)
 	- Bleibt Rot: Container Nicht gefunden, oder Container gerade gesperrt. auch wenn z.B. von einem anderen Spieler gerade auf den Zielcontainer zugegriffen wird, bleibt die Anzeige Rot.
 
-![](Screenshots/Pasted image 20231208154825.png)
+![](Screenshots/img2.png)
 
 #### Benötigte Bauteile:
 - 1x Container (Input)
@@ -30,7 +30,7 @@
     - Die ItemIds haben Vorrang vor den Listen, soll also etwas aus einer Liste in einen anderen Container einsortiert werden, kann die ID auch einfach in der ItemId Liste eingetragen werden.
 - Bei Item-Listen über 2000 Zeichen muss das JSON komprimiert werden, damit es auf den LCD passt. hierfür gibt es tools wie z.B: https://jsonformatter.org/json-minify
 	- Beispiel der Fehlermeldung bei einem zu langen Datenbankeintrag:
-![](Screenshots/Pasted image 20231208215945.png)
+![](Screenshots/img3.png)
 #### Inhalt DB-LCD:
 ```json
 [
