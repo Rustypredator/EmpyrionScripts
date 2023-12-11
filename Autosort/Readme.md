@@ -1,12 +1,12 @@
 ### Bilder + Anleitung:
-![[Pasted image 20231208154542.png]]
+![](Screenshots/Pasted image 20231208154542.png)
 - Es werden auf der Ausgabe alle Items im Input Container angezeigt, die noch nicht zugeordnet sind.
 - IDs müssen dann in dem [[#DB LCD]] dem gewünschten Container zugeordnet werden.
 - Wenn ein Item zugeordnet ist, folgt eine entsprechende Ausgabe unter dem zweiten Trennstrich:
 	- Grün: Erfolgreich verschoben (Diese Anzeige verschwindet nach ein paar Sekunden.)
 	- Bleibt Rot: Container Nicht gefunden, oder Container gerade gesperrt. auch wenn z.B. von einem anderen Spieler gerade auf den Zielcontainer zugegriffen wird, bleibt die Anzeige Rot.
 
-![[Pasted image 20231208154825.png]]
+![](Screenshots/Pasted image 20231208154825.png)
 
 #### Benötigte Bauteile:
 - 1x Container (Input)
@@ -22,10 +22,29 @@
 - Optimiert auf Projektor mit Breite = 3, Höhe egal.
 #### DB LCD:
 - Mindestens ein Element mit "ContainerName" & "ItemIds" muss vorhanden sein.
-- ContainerName ist der Name des Containers, ItemIds ist eine Kommagetrennte Liste an IDs die in den entsprechenden Container einsortiert werden sollen.
+- Das Format muss JSON kompatibel sein. (Siehe Beispiel unten)
+- Elemente:
+    - ContainerName ist der Name des Containers
+    - ItemIds ist eine Kommagetrennte Liste an IDs die in den Container einsortiert werden sollen.
+    - Lists ist der Name der Liste, die zusätzlich in den Container sortiert werden soll.
+    - Die ItemIds haben Vorrang vor den Listen, soll also etwas aus einer Liste in einen anderen Container einsortiert werden, kann die ID auch einfach in der ItemId Liste eingetragen werden.
 - Bei Item-Listen über 2000 Zeichen muss das JSON komprimiert werden, damit es auf den LCD passt. hierfür gibt es tools wie z.B: https://jsonformatter.org/json-minify
 	- Beispiel der Fehlermeldung bei einem zu langen Datenbankeintrag:
-![[Pasted image 20231208215945.png]]
+![](Screenshots/Pasted image 20231208215945.png)
+#### Inhalt DB-LCD:
+```json
+[
+	{
+		"ContainerName": "1. Materialien",
+		"ItemIds": "2247,4316,4360,4361,5104,5913,5914,5920,5921,5923,5927,7301,7312",
+		"Lists": "Ingot,Components,EdenComponents"
+	},
+	{
+		"ContainerName": "_AMMO_SCHIFF",
+		"ItemIds": "4150,4152,4262,4263,4267,5719,5849"
+	}
+]
+```
 
 #### Script
 1. das folgende Script ist komprimiert und kann direkt auf dem LCD eingefügt werden.
