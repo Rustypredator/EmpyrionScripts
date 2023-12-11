@@ -1,0 +1,41 @@
+<align=center>Autosorter - {{datetime}}</align>
+{{~set 'SOURCE' '_AUTOSORT_IN'}}
+{{~set 'DBLCDNAME' 'DB_AUTOSORT'}}
+{{~set 'SEPARATOR' '<align=center>================================================================================================</align>'}}
+<align=center>Autosort Inhalt (bei Permanent bleibenden Elementen die IDs in die DB eintragen)</align>
+{{@root.Data.SEPARATOR}}
+ID<pos=4em></pos><pos=5em>Anzahl</pos><pos=11em>Name</pos>
+{{#items @root.E.S @root.Data.SOURCE}}
+	<color=red>{{Id}}</color><pos=4em></pos><pos=5em><color=green>{{Count}}</color></pos><pos=11em><color=white>{{i18n Id}}</color></pos>
+{{/items}}
+{{@root.Data.SEPARATOR}}
+{{devices @root.E.S @root.Data.DBLCDNAME}}
+	{{gettext .0}}
+		{{#fromjson .}}
+			{{#each .}}
+				{{#jsontodictionary .}}
+					{{#items @root.E.S @root.Data.SOURCE}}
+						{{#test Id in ../ItemIds}}
+							<color=red>TODO: {{../Count}} x {{i18n ../Id}} -> {{../../ContainerName}}</color>
+							{{#move ../. @root.E.S ../../ContainerName}}
+								<color=green>DONE: {{../../Count}} x {{i18n ../../Id}} -> {{../../../ContainerName}}</color>
+							{{/move}}
+						{{/test}}
+					{{/items}}
+					{{split Lists ','}}
+						{{~#each .}}
+							{{#items @root.E.S @root.Data.SOURCE}}
+								{{#test Id in (lookup @root.ids ../.)}}
+									<color=red>[LISTS]TODO: {{../Count}} x {{i18n ../Id}} -> {{../../../../ContainerName}}</color>
+									{{#move ../. @root.E.S ../../../../ContainerName}}
+										<color=green>[LISTS]DONE: {{../../Count}} x {{i18n ../../Id}} -> {{../../../../../ContainerName}}</color>
+									{{/move}}
+								{{/test}}
+							{{/items}}
+						{{/each}}
+					{{/split}}
+				{{/jsontodictionary}}
+			{{/each}}
+		{{/fromjson}}
+	{{/gettext}}
+{{/devices}}

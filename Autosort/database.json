@@ -1,0 +1,67 @@
+[
+	{
+		"ContainerName": "1. Materialien",
+		"ItemIds": "2247,4316,4360,4361,5104,5913,5914,5920,5921,5923,5927,7301,7312",
+		"Lists": "Ingot,Components,EdenComponents"
+	},
+	{
+		"ContainerName": "_AMMO_SCHIFF",
+		"ItemIds": "4150,4152,4262,4263,4267,5719,5849"
+	},
+	{
+		"ContainerName": "3. Bauteile",
+		"ItemIds": "",
+		"Lists": "WeaponHV,WeaponSV,WeaponCV,WeaponBA"
+	},
+	{
+		"ContainerName": "6. BP-Factory-In",
+		"ItemIds": ""
+	},
+	{
+		"ContainerName": "4. FUEL",
+		"ItemIds": "4159,4176,4177,4186,4342,4421,4314,4335"
+	},
+	{
+		"ContainerName": "Tools",
+		"ItemIds": "",
+		"Lists": "Tools"
+	},
+	{
+		"ContainerName": "2. Weapons",
+		"ItemIds": "",
+		"Lists": "WeaponPlayer"
+	},
+	{
+		"ContainerName": "AMMO Rest",
+		"ItemIds": "",
+		"Lists": "AmmoPlayer,AmmoHV,AmmoSV,AmmoBA"
+	},
+	{
+		"ContainerName": "Upgrade Kits",
+		"ItemIds": "4356,5706,4354,4352"
+	},
+	{
+		"ContainerName": "_FOOD",
+		"ItemIds": "",
+		"Lists": "Food,Ingredient"
+	},
+	{
+		"ContainerName": "_PLANTS",
+		"ItemIds": "490,594,597,607,639,644,1175,1179"
+	},
+	{
+		"ContainerName": "_MEDS",
+		"ItemIds": "",
+		"Lists": "Medic"
+	},
+	{
+		"ContainerName": "8. Harvest Controller",
+		"ItemIds": "",
+		"Lists": "Ore"
+	},
+	{
+		"ContainerName": "Armor & Boosts",
+		"ItemIds": "",
+		"Lists": "Armor,ArmorMod"
+	}
+]
